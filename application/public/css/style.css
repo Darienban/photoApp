@@ -1,0 +1,192 @@
+/*General Css*/
+html{
+  font-family: sans-serif;
+  background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2074&q=80");
+  background-attachment:fixed;
+  background-position: center;
+}
+
+/*Login and Registration Css*/
+.logregParent{
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content:center;
+  align-items: center;
+}
+
+.logregCenter{
+  margin:10px;
+  text-align: center;
+  width: 350px;
+  border-radius: 15px;
+  border: 3px;
+  background: rgba(0, 0, 0, 0.76);
+}
+
+.logregCenter div{
+  padding:15px;
+  color: white;
+}
+
+.logregRight, .logregScuffed{
+  font-size: medium;
+  align-items: left;
+  width: 300px;
+  border-radius: 15px;
+  border: 3px;
+  background: rgba(0, 0, 0, 0.76);
+}
+
+.logregRight div{
+  padding:8px;
+}
+
+input[id="userNameL"], input[id="passwordL"], input[id="userName"], input[id="email"], input[id="password"], input[id="cPassword"] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+a[id="reg-button"]{
+  background:none;
+  justify-content: center;
+} 
+
+button[id="logButton"], button[id="regButton"] {
+  background-color: rgb(56, 82, 56);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/*Post Css*/
+.container-post{
+  transform: translate(0px, 10px);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 525px;
+  margin: auto;
+  border-radius: 15px;
+  border: 3px;
+  background: rgba(0, 0, 0, 0.76);
+}
+
+.container-post div{
+  padding:15px;
+  color: white;
+}
+
+input[id="description"]{
+  padding: 8px 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+textarea[id="textArea"]{
+  padding: 8px 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+button[id="postButton"]{
+  background-color: rgb(57, 56, 82);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/*View Post Css*/
+.container-view{
+  transform: translate(0px, 10px);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 450px;
+  margin:auto;
+  border-radius: 15px;
+  border: 3px;
+  background: rgba(0, 0, 0, 0.76);
+}
+
+.container-view div{
+  padding:15px;
+  color: white;
+}
+
+/*Banner Css*/
+.header{
+  border-radius: 15px;
+  width: 100%;
+  background:rgb(56, 82, 56)
+}
+
+a[id="index-button"]{
+  text-align: center;
+  display: block;
+  background: none;
+}
+
+/*Footer Css*/
+.footer{
+  width: 100%;
+  position: fixed;
+  bottom:0;
+  left:0;
+  padding: 10px 0;
+  text-align: center;
+  background:rgb(56, 82, 56);
+  color: white;
+}
+
+/*Navbar Css*/
+.nav-items{
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius: 15px;
+  width:100%;
+  padding: 20px 0;
+}
+
+a[id="brand-anchor"], a[id="post-button"], a[id=authenticate-button]{
+  background:rgb(56, 82, 56);
+  max-width:35px;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-left: 15px;
+}
+
+a[id="brand-anchor"]{
+  margin-right: 15px;
+}
+
+a[id="authenticate-button"]{
+  margin-right: 15px;
+}
+
+input[id="search-text"]{
+  flex-grow: 1;
+  width:100%;
+  padding: 8px 10px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+}

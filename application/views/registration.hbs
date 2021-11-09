@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="logregParent">
+    {{!-- this is such an extremely scuffed way to center the "container-logreg" div but at this point ive tried so many other things --}}
+    {{!-- that I decided the way im going to center this is have a first inivisable div so flexbox will just auto center it --}}
+    <div class="logregScuffed"></div>
+    <div class="logregCenter">
+        <body>
+        <div class="box-1" >
+            <header>
+                <h1>
+                    Create your account
+                </h1>
+            </header>
+        </div>
+        <div class="box-2">
+            <form name="textForm" id="form1">
+                <input type="text" id="userName" placeholder="Enter Username" onclick="showUserReq()" onkeyup="showUserReq()"> <br>
+                <input type="email" id="email" placeholder="Enter Email" onclick="showEmailReq()" onkeyup="showEmailReq()"> <br>
+                <input type="password" id="password" placeholder="Enter Password" onclick="showPasswordReq()" onkeyup="showPasswordReq()"> <br>
+                <input type="password" id="cPassword" placeholder="Confirm Password" onclick="showPassConfirmReq()" onkeyup="showPassConfirmReq()"> <br><br> 
+                
+            </form>
+        </div>    
+        <div class = "box-checkmarks">
+            <form name="checkboxForm" id="form2">
+                <input type="checkbox" id="check1" onclick="ageBoxCheck()"> Check if you are 13+ years of age <br>
+                <input type="checkbox" id="check2" onclick="tosBoxCheck()"> Check if you read and accept the <a href="#">TOS and Privacy Rules</a> <br>
+            </form>
+        </div>
+        <div class="box-3">
+            <button  type="submit" id="regButton" onclick="submitForms()">Submit</button>
+        </div>
+        </body>  
+    </div> 
+    {{!-- <div class="spacing?" style="color:rgba(0,0,0,0); user-select:none;">000</div> --}}
+    <div class="logregRight">
+        <body>
+            <!-- Username Specific divs-->
+            <div id="userLetter" style="display:none; color:red">
+                -Username must begin with character
+            </div>
+            <div id="userLength" style="display:none; color:red">
+                -Username must be 3 or more characters
+            </div>
+            <!-- Email Specific divs-->
+            <div id="emailConfirm" style="display:none; color:red">
+                -Enter valid email
+            </div>
+            <!-- Password Specific divs-->
+            <div id="passLength" style="display:none; color:red">
+                -Password must have 8 or more characters
+            </div>
+            <div id="passUpper" style="display:none; color:red">
+                -Password must contain 1 upper case letter
+            </div>
+            <div id="passNumber" style="display:none; color:red">
+                -Password must contain 1 number
+            </div>
+            <div id="passSpecial" style="display:none; color:red">
+                -Password must contain 1 special character: / * - + ! @ # $ ^ & *
+            </div>
+            <!-- Password Conformation Specific divs-->
+            <div id="passConfirm" style="display:none; color:red">
+                -Please retype your password
+            </div>
+        </body>
+    </div>
+</div>
+</html>
