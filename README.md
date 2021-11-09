@@ -9,11 +9,11 @@ Please follow the instructions below and fill in the information requested when 
 
 ## Student Information
 
-|               | Information   |
-|:-------------:|:-------------:|
-| Student Name  | name-here     |
-| Student ID    | id-here       |
-| Student Email | email-here    |
+|               | Information                 |
+|:-------------:|:---------------------------:|
+| Student Name  | Darien Banuelos             |
+| Student ID    | 921040975                   |
+| Student Email | dbanuelos1@mail.sfsu.edu.   |
 
 
 
