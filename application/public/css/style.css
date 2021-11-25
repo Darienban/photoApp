@@ -41,7 +41,7 @@ html{
   padding:8px;
 }
 
-input[id="userNameL"], input[id="passwordL"], input[id="userName"], input[id="email"], input[id="password"], input[id="cPassword"] {
+input[id="username"], input[id="email"], input[id="password"], input[id="cPassword"] {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -156,37 +156,51 @@ a[id="index-button"]{
   align-items: center;
   background: rgba(0, 0, 0, 0.95);
   border-radius: 15px;
-  width:100%;
   padding: 20px 0;
 }
 
-a[id="brand-anchor"], a[id="post-button"], a[id=authenticate-button]{
+a[id="brand-anchor"], a[id="post-button"], a[id=authenticate-button], a[id="logout-button"]{
   background:rgb(56, 82, 56);
-  max-width:35px;
-  flex-shrink: 0;
-  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  
+  
   border: none;
   color: white;
   padding: 8px 10px;
   text-decoration: none;
   font-size: 16px;
   border-radius: 8px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 a[id="brand-anchor"]{
-  margin-right: 15px;
+  margin-right: 10px;
+  margin-left: 15px;
 }
 
-a[id="authenticate-button"]{
+a[id="authenticate-button"], a[id="logout-button"]{
   margin-right: 15px;
 }
 
 input[id="search-text"]{
   flex-grow: 1;
-  width:100%;
   padding: 8px 10px;
   margin: 4px 0;
   box-sizing: border-box;
   border-radius: 8px;
+}
+
+/*Flash Message Css*/
+#flash-message{
+  background: rgba(181, 106, 231, 0.829);
+  border-radius: 15px;
+  padding: 15px 5px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%,100px);
+}
+
+#flash-message div{
+  text-align: center;
 }

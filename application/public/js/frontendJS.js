@@ -7,13 +7,6 @@ var f = document.getElementById("passNumber");
 var g = document.getElementById("passSpecial");
 var h = document.getElementById("passConfirm");
 
-var pass1 = 0;
-var pass2 = 0;
-var pass3 = 0;
-var pass4 = 0;
-var pass5 = 0;
-var pass6 = 0;
-
 function setAllNone(){
     a.style.display = "none";
     b.style.display = "none";
@@ -26,7 +19,7 @@ function setAllNone(){
 }
 
 function showUserReq(){
-    var username = document.getElementById("userName").value;
+    var username = document.getElementById("username").value;
 
     setAllNone();
     a.style.display = "block";
@@ -38,10 +31,6 @@ function showUserReq(){
     if(username.length >= 3){
         b.style.display = "none";
     }
-
-    if(a.style.display == "none" && b.style.display == "none"){
-        pass1 = 1;
-    }else{pass1 = 0;}
 }
 
 function showEmailReq(){
@@ -53,10 +42,6 @@ function showEmailReq(){
     if(email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
         c.style.display = "none"
     }
-
-    if(c.style.display == "none"){
-        pass2 = 1;
-    }else{pass2 = 0;}
 }
 
 function showPasswordReq(){
@@ -80,10 +65,6 @@ function showPasswordReq(){
     if((/[ / * + ! @ # $ ^ & * -]/).test(password)){
         g.style.display = "none";
     }
-
-    if(d.style.display == "none" && e.style.display == "none" && f.style.display == "none" && g.style.display == "none"){
-        pass3 = 1;
-    }else{pass3 = 0;}
 }
 
 function showPassConfirmReq(){
@@ -96,49 +77,23 @@ function showPassConfirmReq(){
     if(passConfirm == password){
         h.style.display = "none";
     }
-
-    if(h.style.display == "none"){
-        pass4 = 1;
-    }else{pass4 = 0;}
 }
 
-function ageBoxCheck(){
-    if(document.getElementById("check1").checked){
-        pass5 = 1;
-    }else{pass5 = 0;}
+function setFlashMessageFadeOut(){
+    setTimeout(() => {
+        let currentOpacity = 1.0;
+        let timer = setInterval(() => {
+            if(currentOpacity < 0.05){
+                clearInterval(timer);
+                flashElement.remove();
+            }
+            currentOpacity = currentOpacity - 0.05;
+            flashElement.style.opacity = currentOpacity;
+        },50)
+    },2500)
 }
 
-function tosBoxCheck(){
-    if(document.getElementById("check2").checked){
-        pass6 = 1;
-    }else{pass6 = 0;}
-}
-
-function submitForms(){
-    var userText = emailText = passText = cPassText = ageCheckTest = tosCheckTest = "";
-  if(pass1 == 0 || pass2 == 0 || pass3 == 0 || pass4 == 0 || pass5 == 0 || pass6 == 0){
-      
-      if(pass1 == 0){
-        userText = "-Username \n"
-      }
-      if(pass2 == 0){
-        emailText = "-Email \n"
-      }
-      if(pass3 == 0){
-        passText = "-Password \n"
-      }
-      if(pass4 == 0){
-          cPassText = "-Confirm Password \n"
-      }
-      if(pass5 == 0){
-          ageCheckTest = "-Age Checkbox \n"
-      }
-      if(pass6 == 0){
-          tosCheckTest = "-TOS and Privacy Rules Checkbox"
-      }
-      var message = "Make sure you correctly filled out these sections: \n" + userText + emailText + passText + cPassText + ageCheckTest + tosCheckTest
-      alert(message);
-  }else{
-    location.reload();
-  }
+let flashElement = document.getElementById('flash-message');
+if(flashElement){
+    setFlashMessageFadeOut();
 }

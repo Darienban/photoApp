@@ -8,18 +8,17 @@
                 </h1>
             </header> 
         </div>   
-        <div class="box-2">
-            <form>
-                <input type="text" id="userNameL" placeholder="Username"> <br>
-                <input type="password" id="passwordL" placeholder="Password">
-            </form>
-        </div>
-        <a href="/register" id="reg-button" class="nav-items anchor-buttons">Don't have an account? Click Here!</a>
-        <div class="box-3">
-            <form>
-                <button name type="submit" id="logButton"> Submit </button>
-            </form>
-        </div>    
+        <form id="logForm" method="POST" action="/users/login" enctype="application/x-www-form-urlencoded">
+            <div class="box-2">
+                    <input type="text" id="username" placeholder="Username" name="username"> <br>
+                    <input type="password" id="password" placeholder="Password" name="password">
+            </div>
+            <a href="/register" id="reg-button" class="nav-items anchor-buttons">Don't have an account? Click Here!</a>
+            <div class="box-3">
+                    <button type="submit" id="logButton"> Submit </button>
+            </div>  
+        </form>
+            
         </body>
     </div>
 </div>

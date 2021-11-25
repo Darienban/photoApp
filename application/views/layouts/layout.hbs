@@ -4,16 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <script defer type="text/javascript" src="public/js/formValidation.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <script defer type="text/javascript" src="/public/js/frontendJS.js"></script>
 </head>
   <body>
     <div id="container">
+      {{log this}}
       {{> banner}}
+      {{#if (emptyObject messages)}}
+      {{> flashmessage}}
+      {{/if}}
       {{> nav}}
       {{{body}}}
       {{> footer}}
     </div>
-    
+
+    {{#if logged}}
+      <script>
+        let ele = document.getElementById('logout-button');
+        if(ele){
+          ele.onclick = (even) => {
+            fetch('/users/logout',{
+              method:"POST"
+            })
+            .then((data) => {
+              location.replace('/');
+            })
+          }
+        }
+      </script>
+    {{/if}}
   </body>
 </html>

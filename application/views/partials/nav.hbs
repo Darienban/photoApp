@@ -1,8 +1,14 @@
 <div id="nav-bar">
     <div id="brand" class="nav-items">
-    <a href="index.hbs" id="brand-anchor">iPA</a>
+    <a href="/index" id="brand-anchor">iPA</a>
     <input id="search-text" id="search-text" type="text" placeholder="Search...">
     <a href="/post" id="post-button" class="nav-items anchor-buttons">Post</a>
-    <a href="/login" id="authenticate-button" class="nav-items anchor-buttons">Login</a>
+
+    {{#if logged}}
+        <a id="logout-button" class="nav-items anchor-buttons">Log Out</a>
+    {{else}}
+        <a href="/login" id="authenticate-button" class="nav-items anchor-buttons">Login</a>
+    {{/if}}
+    
     </div>
 </div>
