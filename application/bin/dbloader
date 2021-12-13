@@ -63,7 +63,7 @@ async function makePostsTable(connection) {
   const [result, _] = await connection.query(
     // Posts Table SQL Goes here
     `CREATE TABLE IF NOT EXISTS csc317db.post (
-      id INT NOT NULL,
+      id INT NOT NULL AUTO_INCREMENT,
       title VARCHAR(128) NOT NULL,
       description MEDIUMTEXT NOT NULL,
       photopath VARCHAR(2048) NOT NULL,

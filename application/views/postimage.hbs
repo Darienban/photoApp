@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <div class="container-post">
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
     <body>
     <div class="box-1">
         <header>
@@ -9,21 +12,38 @@
             </h1>
         </header>
     </div>
-    <div class="box-2">
-         <form>
+    <form id="post-image" class="form-grid-postimage" method="POST" enctype="multipart/form-data" action="/posts/createPost">
+        <div class="box-2">
             <lable>Enter Title Here: </lable><br>
-            <input type="text" id="description"> <br>
+            <input id="title" type="text" name="title" required> <br>
             <lable>Enter Description Here: </lable><br>
-            <textarea id="textArea" rows="5" cols="60"></textarea><br>
-        </form>
-    </div>         
-    <div class="box-3">
-        <label for="imageFile">Input an Image here:</label><br>
-        <input type="file" id="imageFile" accept="image/*"><br><br>
-        <input type="checkbox"> Check to accept <a href="#">Acceptable Use Policy</a> for uploading an image<br><br> 
-        <button type="submit" id="postButton"> Submit </button>
-    </div>
+            <textarea id="description" rows="5" cols="60" name="description" required></textarea><br>
+        </div>         
+        <div class="box-3">
+            <label for="imageFile">Input an Image here:</label><br>
+            <input type="file" id="img-select" accept="image/*" name="uploadImage" required><br><br>
+            <input type="checkbox"> Check to accept <a href="#">Acceptable Use Policy</a> for uploading an image<br><br> 
+            <button id="postButton" type="submit"> Submit </button>
+        </div>
+    </form>
+
+    <script>
+        const _form = document.getElementById('post-image');
+        _form.onsubmit = function(event) {
+            event.preventDefault();
+            let _body = new FormData(_form);
+            
+            axios('/posts/createPost', {
+                data: _body,
+                method:"POST"
+            })
+            .then((data) => {
+                console.log(data.data);
+                location.replace(data.data.redirect);
+            })
+            .catch(err => console.log(err));
+        }
+    </script>
     </body>
 </div>
-
 </html>

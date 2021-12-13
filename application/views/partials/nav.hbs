@@ -1,13 +1,12 @@
 <div id="nav-bar">
     <div id="brand" class="nav-items">
-    <a href="/index" id="brand-anchor">iPA</a>
-    <input id="search-text" id="search-text" type="text" placeholder="Search...">
-    <a href="/post" id="post-button" class="nav-items anchor-buttons">Post</a>
+    <input id="search-text" type="text" placeholder="Search...">
+    <a href="/post" id="post-button">Post</a>
 
     {{#if logged}}
-        <a id="logout-button" class="nav-items anchor-buttons">Log Out</a>
+        <a id="logout-button">Log Out</a>
     {{else}}
-        <a href="/login" id="authenticate-button" class="nav-items anchor-buttons">Login</a>
+        <a href="/login" id="authenticate-button">Login</a>
     {{/if}}
     
     </div>

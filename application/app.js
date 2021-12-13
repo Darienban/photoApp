@@ -7,6 +7,8 @@ const logger = require("morgan");
 const handlebars = require("express-handlebars");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const postsRouter = require("./routes/posts");
+const commentRouter = require("./routes/comments")
 var sessions = require('express-session');
 var mysqlSessions = require('express-mysql-session')(sessions);
 var flash = require('express-flash');
@@ -67,6 +69,8 @@ app.use((req, res, next) => {
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
+app.use("/posts", postsRouter);  // route middleware from ./routes/posts.js
+app.use('/comments', commentRouter); //route middleware from ./routes/comments.js
 
 
 /**
@@ -92,7 +96,6 @@ app.use(function (err, req, res, next) {
 });
 
 app.use((req, res, next) => {
-  console.log(req.session);
   if(req.session.username){
     res.locals.logged = true;
   }
