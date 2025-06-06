@@ -2,9 +2,5 @@
   "name": "csc317-termproject-Darienban",
   "lockfileVersion": 2,
   "requires": true,
-  "packages": {
-    "": {
-      "name": "csc317-termproject-Darienban"
-    }
-  }
+  "packages": {}
 }

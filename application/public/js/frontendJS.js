@@ -52,7 +52,7 @@ function showPasswordReq(){
     d.style.display = "block"
     e.style.display = "block"
     f.style.display = "block"
-    g.style.display = "block"
+    g.style.display = "block"                    
 
     if(password.length >= 8){
         d.style.display = "none";
