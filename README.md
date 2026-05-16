@@ -3,9 +3,7 @@
 
 ## Purpose
 
-The purpose of this repository is to store all the code for your web application. This also includes the history of all commits made and who made them. Only code submitted on the master branch will be graded.
-
-Please follow the instructions below and fill in the information requested when prompted.
+University Project: code assissted full stack photo app website, used to focus front-end, learn back-end, and database management.
 
 ## Student Information
 
